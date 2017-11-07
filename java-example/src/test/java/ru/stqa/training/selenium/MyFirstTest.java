@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
 public class MyFirstTest {
@@ -19,6 +21,8 @@ public class MyFirstTest {
   @Before
   public void  strat(){
     driver = new ChromeDriver();
+    //gdy nie znajdzie elementu to szuka gojeszcze przez 10 sekund
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     wait = new WebDriverWait(driver,10);
   }
 
