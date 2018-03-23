@@ -8,6 +8,7 @@ import org.openqa.selenium.HasCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -31,17 +32,21 @@ public class MyFirstTest {
     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     wait = new WebDriverWait(driver,10);
     */
-    ChromeOptions options= new ChromeOptions();
-    options.addArguments("start-fullscreen");
+    //ChromeOptions options= new ChromeOptions();
+   // options.addArguments("start-fullscreen");
     //driver = new ChromeDriver(options);
 
     DesiredCapabilities caps = new DesiredCapabilities();
+
+    //    //    //wskazanie, ze FF ma być uruchomione wg. "starego" schematu (tylko dla wersji przeglądarek obsługujących start=y schemat np FF SRE)
+    caps.setCapability(FirefoxDriver.MARIONETTE,false);
+
     //caps.setCapability(ChromeOptions.CAPABILITY, options);
   //  caps.setCapability("unexpectedAlertBehavior", "disnuss");
-    caps.setCapability(InternetExplorerDriver.IGNORE_ZOOM_SETTING,true);
-    caps.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS);
-    driver= new InternetExplorerDriver(caps);
-    driver= new ChromeDriver(caps);
+   // caps.setCapability(InternetExplorerDriver.IGNORE_ZOOM_SETTING,true);
+    //caps.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS);
+   // driver= new InternetExplorerDriver(caps);
+  //  driver= new ChromeDriver(caps);
    // System.out.println(((HasCapabilities)driver).getCapabilities());
     wait= new WebDriverWait(driver, 10);
   }
