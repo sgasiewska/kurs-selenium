@@ -8,12 +8,15 @@ import org.openqa.selenium.HasCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
@@ -39,8 +42,13 @@ public class MyFirstTest {
     DesiredCapabilities caps = new DesiredCapabilities();
 
     //    //    //wskazanie, ze FF ma być uruchomione wg. "starego" schematu (tylko dla wersji przeglądarek obsługujących start=y schemat np FF SRE)
-    caps.setCapability(FirefoxDriver.MARIONETTE,false);
+    //caps.setCapability(FirefoxDriver.MARIONETTE,false);
 
+    FirefoxProfile profile = new FirefoxProfile();
+    driver = new FirefoxDriver(
+            new FirefoxBinary(new File( "sciezka\\firefox.exe")),
+            new FirefoxProfile() caps);
+    )
     //caps.setCapability(ChromeOptions.CAPABILITY, options);
   //  caps.setCapability("unexpectedAlertBehavior", "disnuss");
    // caps.setCapability(InternetExplorerDriver.IGNORE_ZOOM_SETTING,true);
