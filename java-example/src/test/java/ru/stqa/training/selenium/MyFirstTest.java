@@ -36,9 +36,11 @@ public class MyFirstTest {
     //driver = new ChromeDriver(options);
 
     DesiredCapabilities caps = new DesiredCapabilities();
-    caps.setCapability(ChromeOptions.CAPABILITY, options);
+    //caps.setCapability(ChromeOptions.CAPABILITY, options);
   //  caps.setCapability("unexpectedAlertBehavior", "disnuss");
-   // driver= new InternetExplorerDriver(caps);
+    caps.setCapability(InternetExplorerDriver.IGNORE_ZOOM_SETTING,true);
+    caps.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS);
+    driver= new InternetExplorerDriver(caps);
     driver= new ChromeDriver(caps);
    // System.out.println(((HasCapabilities)driver).getCapabilities());
     wait= new WebDriverWait(driver, 10);
