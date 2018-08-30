@@ -11,6 +11,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.util.concurrent.TimeUnit;
+
 
 public class TestBase  {
 
@@ -44,8 +46,18 @@ public void start() {
             return;
         }
         driver = new ChromeDriver();
+        //niejawne oczekiwanie na pojawienie sie elementu na stronie
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         tlDriver.set(driver);
         System.out.println(((HasCapabilities) driver).getCapabilities());
+
+
+    }
+
+    @After
+    public void stop(){
+        // driver.quit();
+        //  driver= null;
     }
 }
 

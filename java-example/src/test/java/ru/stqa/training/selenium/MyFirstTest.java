@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
 
@@ -20,8 +21,8 @@ public class MyFirstTest extends TestBase {
   public void myFirstTest() {
      driver.navigate().to("http://www.google.com");
      driver.findElement(By.name("q")).sendKeys("webdriver");
-     //spr czy nie ma tego elementu
-     assertFalse(isElementPresent(By.name("XXX")));
+
+     assertTrue(isElementPresent(By.cssSelector(".sbdd_b")));
 
   //   WebElement element = driver.findElement(By.xpath("//input[@value='Szukaj w Google']"));
    //  Actions actions = new Actions(driver);
