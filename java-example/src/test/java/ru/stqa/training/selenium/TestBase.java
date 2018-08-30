@@ -2,10 +2,7 @@ package ru.stqa.training.selenium;
 
 import org.junit.After;
 import org.junit.Before;
-import org.openqa.selenium.By;
-import org.openqa.selenium.HasCapabilities;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -22,11 +19,15 @@ public class TestBase  {
     public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
 
     //funkcja do spr obecnosci elementu wg okreslonego lokatora
-    public  boolean isElementPresent (By locator){
-        try{
+    public  boolean isElementPresent (By locator) {
+        try {
             driver.findElement(locator);
-            return  true;
-        } catch (NoSuchElementException ex){
+            return true;
+// jeżeli lokator jest nieprawidołowy to ma wyrzucić wyjątek
+        } catch (InvalidElementStateException ex){
+            throw  ex;
+            //jeżeli lokator jest prawidłowy ale nie odnaleziono go na stronie to ma nie być wyjątku
+    }catch (NoSuchElementException ex){
             return false;
         }
     }

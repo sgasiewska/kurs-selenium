@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
+import static org.junit.Assert.assertFalse;
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
 
@@ -19,13 +20,14 @@ public class MyFirstTest extends TestBase {
   public void myFirstTest() {
      driver.navigate().to("http://www.google.com");
      driver.findElement(By.name("q")).sendKeys("webdriver");
-     //WebElement btnG=driver.findElement(By.xpath("//input[@value='Szukaj w Google']"));
+     //spr czy nie ma tego elementu
+     assertFalse(isElementPresent(By.name("XXX")));
 
-     WebElement element = driver.findElement(By.xpath("//input[@value='Szukaj w Google']"));
-     Actions actions = new Actions(driver);
-     actions.moveToElement(element).click().build().perform();
-     wait.until(titleIs("webdriver - Szukaj w Google"));
-     //btnG.click();
+  //   WebElement element = driver.findElement(By.xpath("//input[@value='Szukaj w Google']"));
+   //  Actions actions = new Actions(driver);
+   //  actions.moveToElement(element).click().build().perform();
+  //   wait.until(titleIs("webdriver - Szukaj w Google"));
+
  }
 
  /*
