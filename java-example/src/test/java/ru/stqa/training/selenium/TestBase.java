@@ -23,15 +23,13 @@ public class TestBase  {
     //funkcja do spr obecnosci elementu wg okreslonego lokatora
     public  boolean isElementPresent (By locator) {
         try {
-            //jawne oczekiwanie na element
-            wait.until((WebDriver d) -> d.findElement(locator));
-            //driver.findElement(locator);
+            driver.findElement(locator);
             return true;
 // jeżeli lokator jest nieprawidołowy to ma wyrzucić wyjątek
         } catch (InvalidElementStateException ex){
             throw  ex;
             //jeżeli lokator jest prawidłowy ale nie odnaleziono go na stronie to ma nie być wyjątku
-    }catch (TimeoutException ex){
+    }catch (NoSuchElementException ex){
             return false;
         }
     }
@@ -56,9 +54,10 @@ public void start() {
 
     }
 
+
     @After
     public void stop(){
-        // driver.quit();
+        driver.quit();
         //  driver= null;
     }
 }
