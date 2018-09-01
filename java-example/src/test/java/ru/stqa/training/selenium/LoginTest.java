@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -32,13 +33,21 @@ public class LoginTest {
     @Test
     public void loginTest(){
         driver.get("http://localhost/litecart/admin/login.php");
-        driver.findElement(By.name("username")).sendKeys("admin");
+        driver.findElement(By.name("username")).sendKeys("admi3n");
         driver.findElement(By.name("password")).sendKeys("admin");
         driver.findElement(By.name("login")).click();
-        wait.until(titleIs("My Store"));
 
-        String tekst=driver.findElement(By.xpath("(//th[@colspan='2'])")).getAttribute("textContent");
-        System.out.println(tekst);
+        WebElement komunikat= (WebElement) driver.findElement(By.xpath("//td[contains(text(),'Username')]"));
+
+        if (komunikat.isDisplayed()) {
+            System.out.println("komunikat niewidoczny");
+        } else{
+            System.out.println("komunikat widoczny");
+        }
+
+
+       // String tekst=driver.findElement(By.xpath("(//th[@colspan='2'])")).getAttribute("textContent");
+      //  System.out.println(tekst);
     }
 
     @After
