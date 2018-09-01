@@ -1,5 +1,6 @@
 package ru.stqa.training.selenium;
 
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,21 +34,12 @@ public class LoginTest {
     @Test
     public void loginTest(){
         driver.get("http://localhost/litecart/admin/login.php");
-        driver.findElement(By.name("username")).sendKeys("admi3n");
-        driver.findElement(By.name("password")).sendKeys("admin");
-        driver.findElement(By.name("login")).click();
 
         WebElement komunikat= (WebElement) driver.findElement(By.xpath("//td[contains(text(),'Username')]"));
 
-        if (komunikat.isDisplayed()) {
-            System.out.println("komunikat niewidoczny");
-        } else{
-            System.out.println("komunikat widoczny");
-        }
+        String color = komunikat.getCssValue("color");
 
-
-       // String tekst=driver.findElement(By.xpath("(//th[@colspan='2'])")).getAttribute("textContent");
-      //  System.out.println(tekst);
+        System.out.println(color);
     }
 
     @After
