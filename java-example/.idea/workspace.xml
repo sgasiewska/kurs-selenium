@@ -89,8 +89,8 @@
       <file leaf-file-name="Przyklady.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/training/selenium/Przyklady.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="29" column="81" lean-forward="false" selection-start-line="29" selection-start-column="81" selection-end-line="29" selection-end-column="81" />
+            <state relative-caret-position="126">
+              <caret line="31" column="47" lean-forward="false" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -768,11 +768,11 @@
     <history-entry file="Przyklady_przyklad2 - 2018.09.03 at 11h 41m 26s.xml">
       <configuration name="Przyklady.przyklad2" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Przyklady_przyklad2 - 2018.09.03 at 12h 02m 30s.xml">
+      <configuration name="Przyklady.przyklad2" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="Przyklady_przyklas - 2018.09.03 at 10h 47m 22s.xml">
       <configuration name="Przyklady.przyklas" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Zad10SprCzyWlasciwaStrona_czyWlasciwaStrona - 2018.09.02 at 22h 08m 57s.xml">
-      <configuration name="Zad10SprCzyWlasciwaStrona.czyWlasciwaStrona" configurationId="JUnit" />
     </history-entry>
     <history-entry file="Zad10SprCzyWlasciwaStrona_czyWlasciwaStrona - 2018.09.02 at 22h 14m 44s.xml">
       <configuration name="Zad10SprCzyWlasciwaStrona.czyWlasciwaStrona" configurationId="JUnit" />
@@ -1295,8 +1295,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/training/selenium/Przyklady.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="29" column="81" lean-forward="false" selection-start-line="29" selection-start-column="81" selection-end-line="29" selection-end-column="81" />
+        <state relative-caret-position="126">
+          <caret line="31" column="47" lean-forward="false" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

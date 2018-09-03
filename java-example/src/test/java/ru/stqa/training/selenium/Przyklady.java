@@ -27,7 +27,10 @@ public class Przyklady extends TestBase {
 
         driver.get("http://cssglobe.com/lab/style_select/01.html");
         WebElement select = driver.findElement(By.cssSelector("select"));
-        executor.executeScript("arguments[0].selectedIndex=3; arguments[0].dispatchEvent(new Event('change))", select);
+      //  executor.executeScript("arguments[0].selectedIndex=3; arguments[0].dispatchEvent(new Event('change))", select);
+
+      //zmiana stylu elementu zeby był kilkalny
+       executor.executeScript("arguments[0].style.opacity=1", select);
 
     }
 }
